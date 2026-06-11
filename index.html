@@ -18,14 +18,29 @@
         <nav class="navbar">
 
             <div class="logo">
-                <image src="assets/images/examplelogo.png" alt="HomePro Logo">
+                <img src="assets/images/examplelogo.png" alt="HomePro Logo">
             </div>
 
-            <ul class="nav-links mobile-menu" id="mobileMenu">
-                <li><a href="#" class="active">About Us</a></li>
+            <ul class="nav-links" id="mobileMenu">
+
+                <div class="mobile-menu-header">
+                    <img src="assets/images/examplelogo.png" alt="HomePro Logo">
+
+                    <button class="close-menu" id="closeMenu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <li><a href="#">About Us</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Our Blog</a></li>
                 <li><a href="#">Contact</a></li>
+
+                <li class="mobile-phone">
+                    <span class="dot"></span>
+                    24 Hour Services
+                </li>
+
             </ul>
 
             <div class="nav-phone">
@@ -122,15 +137,12 @@
 
     <section class="about-section">
         <div class="about-container">
-            <div class="about-image">
-                <img src="assets/images/image3.png" alt="Home services">
-            </div>
             <div class="about-content">
                 <h2>Professional for your<br>home services</h2>
                 <p>You need help for home care? We are home care professionals focused in the US region. We provide
                     several services that support home services.</p>
-
-                <div class="about-grid">
+                    
+                    <div class="about-grid">
                     <div class="about-grid-item"><i class="fa-solid fa-circle-check"></i> Repair and Installation</div>
                     <div class="about-grid-item"><i class="fa-solid fa-circle-check"></i> Plumbing</div>
                     <div class="about-grid-item"><i class="fa-solid fa-circle-check"></i> Maintenance</div>
@@ -138,11 +150,14 @@
                     <div class="about-grid-item"><i class="fa-solid fa-circle-check"></i> Home Security Services</div>
                     <div class="about-grid-item"><i class="fa-solid fa-circle-check"></i> Eco-friendly solutions</div>
                 </div>
-
+                
                 <div class="about-alert">
                     We already 24 hours fast services to help you.<br>
                     You can contact us at <a href="tel:8886175894">(888) 617-5894</a>
                 </div>
+            </div>
+            <div class="about-image">
+                <img src="assets/images/image3.png" alt="Home services">
             </div>
 
         </div>
@@ -511,7 +526,7 @@
             <div class="faq-item">
                 <div class="faq-question">
                     <h3>Are the service providers on HomePro reliable and qualified?</h3>
-                     <span class="arrow">
+                    <span class="arrow">
                         <i class="fa-solid fa-chevron-down"></i>
                     </span>
                 </div>
@@ -702,9 +717,14 @@
     <script>
         const menuToggle = document.getElementById("menuToggle");
         const mobileMenu = document.getElementById("mobileMenu");
+        const closeMenu = document.getElementById("closeMenu");
 
         menuToggle.addEventListener("click", () => {
-            mobileMenu.classList.toggle("active");
+            mobileMenu.classList.add("mobile-open");
+        });
+
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("mobile-open");
         });
     </script>
 
